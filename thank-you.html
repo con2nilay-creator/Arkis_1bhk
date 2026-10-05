@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Thank You | ESTO Arkis · Versova · 1 BHK Homes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/images/arkis-logo.png">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;background:#071923;padding:24px;font-family:Jost,sans-serif;font-weight:300;color:#F5F2EA;-webkit-font-smoothing:antialiased}
+    .ty-card{width:100%;max-width:560px;background:#0B2940;border:1px solid rgba(192,112,74,.35);border-top:2px solid #C0704A;padding:clamp(40px,7vw,64px) clamp(26px,6vw,56px);text-align:center;box-shadow:0 40px 90px rgba(0,0,0,.4)}
+    .ty-logo{display:block;width:clamp(130px,30vw,170px);height:auto;margin:0 auto clamp(28px,4vh,40px)}
+    .ty-lbl{margin:0;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:#C0704A}
+    .ty-title{margin:16px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,6vw,60px);line-height:1.04;letter-spacing:-.01em}
+    .ty-title em{font-style:italic;color:#C0704A}
+    .ty-rule{display:block;width:54px;height:1px;background:#C0704A;margin:24px auto}
+    .ty-subtitle{margin:0 auto 34px;max-width:40ch;font-size:15px;line-height:1.8;color:rgba(245,242,234,.65);text-wrap:pretty}
+    .ty-btn{display:inline-block;background:#C0704A;color:#071923;font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:17px 36px;text-decoration:none;transition:background .4s cubic-bezier(.16,1,.3,1)}
+    .ty-btn:hover{background:#D2825A;color:#071923}
+  </style>
+
+  <script defer>
+    function getAllParams() {
+      var vars = {};
+      const url = new URL(window.location.href);
+      for (let [key, value] of url.searchParams) {
+        vars[key] = value;
+      }
+      return vars;
+    }
+    var queryParams = getAllParams();
+  </script>
+
+  <!-- Start Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TBJQHQ56');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJQHQ56" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="ty-card">
+    <img src="assets/images/arkis-logo.png" class="ty-logo" alt="ESTO ARKIS Versova">
+    <p class="ty-lbl">Enquiry received</p>
+    <h1 class="ty-title">Thank <em>you.</em></h1>
+    <span class="ty-rule"></span>
+    <p class="ty-subtitle">Thank you for your interest in ESTO Arkis, Versova. One of our sales advisors will get in
+      touch with you shortly.</p>
+    <a href="index.html" class="ty-btn">Back to Home</a>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script>
+    $('a').one('click', function (e) {
+      if (e.currentTarget.className != "nav-link") {
+        e.preventDefault();
+        if (window.location.href.indexOf('?') != -1) {
+          this.href = this.href + "?" + window.location.href.slice(window.location.href.indexOf('?') + 1);
+        }
+        this.click();
+      }
+    });
+  </script>
+</body>
+
+</html>

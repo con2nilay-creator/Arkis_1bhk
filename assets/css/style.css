@@ -1,0 +1,60 @@
+/* Base styles */
+html { scroll-behavior: auto; }
+  body { margin: 0; background: #071923; -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums proportional-nums; font-feature-settings: "lnum" 1, "onum" 0; }
+  * { box-sizing: border-box; }
+  a { color: #C0704A; text-decoration: none; }
+  a:hover { color: #D98F63; }
+  input, textarea, select, button { font-family: inherit; }
+  ::selection { background: #C0704A; color: #071923; }
+  [data-arkis-root] ::-webkit-scrollbar { height: 3px; width: 3px; }
+  [data-arkis-root] ::-webkit-scrollbar-thumb { background: rgba(192,112,74,.5); }
+  @keyframes arkScroll { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+  @keyframes arkPulse { 0%,100% { transform: scale(1); opacity: .55; } 50% { transform: scale(2.1); opacity: 0; } }
+  @keyframes arkMarquee { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
+  @keyframes arkShine { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 48% { opacity: 1; } 60%, 100% { transform: translateX(340%); opacity: 0; } }
+  @keyframes arkDrift { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-3%,-3%,0); } }
+
+/* Pseudo-element and hover styles from the design export */
+.ark-before-1::before{content:'';position:absolute;top:0;left:-55%;width:42%;height:100%;pointer-events:none;background:linear-gradient(100deg,rgba(245,242,234,0) 0%,rgba(192,112,74,.3) 45%,rgba(245,242,234,.16) 62%,rgba(245,242,234,0) 100%);animation:arkShine 4.2s cubic-bezier(.4,0,.2,1) infinite;animation-delay:0s}
+.ark-before-2::before{content:'';position:absolute;top:0;left:-55%;width:42%;height:100%;pointer-events:none;background:linear-gradient(100deg,rgba(245,242,234,0) 0%,rgba(192,112,74,.3) 45%,rgba(245,242,234,.16) 62%,rgba(245,242,234,0) 100%);animation:arkShine 4.2s cubic-bezier(.4,0,.2,1) infinite;animation-delay:2.1s}
+.ark-hover-1:hover{background:#D2825A !important}
+.ark-hover-2:hover{background:#C0704A !important;color:#071923 !important}
+
+/* Lead forms (modal = drawer, side = pop-up, banner = after the hero, footer = enquire section) */
+.lead-form{display:flex;flex-direction:column;gap:22px}
+.lead-form .form-group{position:relative;min-width:0}
+.lead-label{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,242,234,.7)}
+.lead-form .form-control{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid rgba(245,242,234,.25);border-radius:0;color:#F5F2EA;font-family:Jost,sans-serif;font-weight:300;font-size:18px;padding:12px 0;outline:none;min-height:48px}
+.lead-form .form-control:focus{border-bottom-color:#C0704A}
+.lead-form .form-control::placeholder{color:rgba(245,242,234,.38)}
+.lead-form .form-control:disabled,.lead-form .form-control:disabled::placeholder{color:rgba(245,242,234,.7)}
+.lead-form .form-control.error{border-bottom-color:#E0A07A}
+.lead-form textarea.form-control{min-height:64px;resize:none;line-height:1.5}
+.lead-phone{display:flex;gap:12px}
+.lead-phone .form-control:first-child{flex:0 0 46px}
+.error-modal{display:none;margin-top:7px;font-size:12px;line-height:1.5;color:#E0A07A}
+.lead-terms{display:flex;align-items:flex-start;gap:10px}
+.lead-terms input[type=checkbox]{flex:0 0 auto;width:15px;height:15px;margin:2px 0 0;accent-color:#C0704A;cursor:pointer}
+.terms-and-condition-block{position:relative;width:100%}
+.condition-label{font-size:13px;color:rgba(245,242,234,.65);cursor:pointer}
+.check-box{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:3;padding:10px 12px;background:#071923;border:1px solid rgba(192,112,74,.45);font-size:12px;line-height:1.6;color:rgba(245,242,234,.78)}
+.condition-label:hover ~ .check-box{display:block !important}
+.lead-buttons{display:flex;flex-direction:column}
+.lead-submit{width:100%;min-height:56px;border:0;background:#C0704A;color:#071923;font-family:Jost,sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;padding:18px;cursor:pointer;transition:background .4s cubic-bezier(.16,1,.3,1)}
+.lead-submit:not(:disabled):hover{background:#D2825A}
+.d-none{display:none}
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.banner-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px clamp(20px,3vw,40px)}
+.banner-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 30px}
+.banner-actions .lead-terms{flex:1 1 280px;max-width:420px}
+.banner-actions .lead-buttons{flex:0 1 300px}
+@media (max-width:760px){
+.banner-fields{grid-template-columns:1fr}
+.banner-actions .lead-buttons{flex:1 1 100%}
+}
+/* the banner form after the hero is for mobile/tablet only (the page switches to its mobile layout below 1200px) */
+@media (min-width:1200px){[data-banner-form]{display:none !important}}
